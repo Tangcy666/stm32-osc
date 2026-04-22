@@ -341,7 +341,7 @@ void GenWaveform(uint8_t type, uint32_t Freq, float Vpp, float offset, float dut
 
 void DAC_DMA_Init(void)
 {
-  GenWaveform(SINE, 10000, 1, 0.5, 0.5);
+  GenWaveform(SINE, 1000, 1, 0.5, 0.5);
   // // memcpy(out_table, sine_table, DAC_POINTS * sizeof(uint16_t));
   // for (int i = 0; i < DAC_POINTS; i++)
   // {

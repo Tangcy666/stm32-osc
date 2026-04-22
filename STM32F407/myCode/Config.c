@@ -27,7 +27,7 @@ void ConfigAndData_Init(void)
 
   DAC_Param.HaveChange_Flag = 1;
   DAC_Param.type = 0;
-  DAC_Param.Freq = 10000;
+  DAC_Param.Freq = 1000;
   DAC_Param.VPP = 2.0f;
   DAC_Param.offset = 0.5f;
   DAC_Param.Duty = 0.5f;
