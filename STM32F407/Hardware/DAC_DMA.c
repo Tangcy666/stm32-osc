@@ -310,16 +310,11 @@ int8_t SetSineFreq(float freq_hz, uint16_t Point)
  */
 void GenWaveform(uint8_t type, uint32_t Freq, float Vpp, float offset, float duty)
 {
-  if (Freq <= 400)
-  {
-    DAC_Config.Point = 720;
-  }
-  else if (Freq <= 1250)
-  {
-    DAC_Config.Point = 144;
-  }
-  else
-    DAC_Config.Point = 72;
+  DAC_Config.Point = (uint16_t)(8000000 / Freq + 0.5f);
+  if (DAC_Config.Point > DAC_MAX_POINTS)
+    DAC_Config.Point = DAC_MAX_POINTS;
+  if (DAC_Config.Point < 1)
+    DAC_Config.Point = 1;
 
   if (type == SINE)
   {
@@ -341,7 +336,7 @@ void GenWaveform(uint8_t type, uint32_t Freq, float Vpp, float offset, float dut
 
 void DAC_DMA_Init(void)
 {
-  GenWaveform(SINE, 1000, 1, 0.5, 0.5);
+  GenWaveform(SINE, 10000, 1, 0.5, 0.5);
   // // memcpy(out_table, sine_table, DAC_POINTS * sizeof(uint16_t));
   // for (int i = 0; i < DAC_POINTS; i++)
   // {

@@ -131,6 +131,8 @@ int main(void)
   FFT_Init();                       // 初始化FFT
   DAC_DMA_Init();                   // 初始化DAC
 
+
+  
   /* USER CODE END 2 */
 
   /* Infinite loop */

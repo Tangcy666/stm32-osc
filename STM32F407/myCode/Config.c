@@ -11,7 +11,7 @@ uint32_t OSC_Fs_Arr_config[][2] = {{144, 10000}, {144, 1000}, {144, 100}, {144, 
  */
 void ConfigAndData_Init(void)
 {
-  OSC_Config.OSC_Enable = 0;
+  OSC_Config.OSC_Enable = 1;
   OSC_Config.OSC_DAC_Enable = 1;
   OSC_Config.OSC_FFT_Enable = 0;
   OSC_Config.OSC_Auto_Enable = 0;

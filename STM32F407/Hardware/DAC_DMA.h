@@ -6,7 +6,7 @@
 #define FREQ_MIN 1.0f            // Hz
 #define FREQ_MAX 500000.0f        // Hz
 #define TIMER_CLOCK_HZ 72000000UL // 定时器时钟频率，单位 Hz
-#define DAC_MAX_POINTS 720
+#define DAC_MAX_POINTS 1440
 // #define BASE_FS_HZ (TIMER_CLOCK_HZ / DAC_POINTS) // Hz
 #define dac_htimx htim2
 #define DAC_CHANNEL_x DAC_CHANNEL_1
